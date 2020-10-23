@@ -69,6 +69,8 @@ createElementButton.className = "create-element-button";
 createElementButton.id = 4;
 createElementButton.append("Create Element");
 
+let divSectionElement = document.createElement("div");
+
 //end Stretch 2
 
 /****************
@@ -159,6 +161,8 @@ removeElementButton.addEventListener("click", function () {
 createElementButton.addEventListener("click", function () {
   inputFieldElementTwo = document.querySelector(".user-text-input");
   console.log(inputFieldElementTwo.value);
-  let divSectionElement = document.createElement("div");
-  divSectionElement;
+  divSectionElement = document.createElement("div");
+  let userTextInput = document.createTextNode(inputFieldElementTwo.value);
+  divSectionElement.appendChild(userTextInput);
+  bodySectionElement.append(divSectionElement);
 });
