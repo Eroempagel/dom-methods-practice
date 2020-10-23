@@ -29,14 +29,52 @@
  *    Part 1    *
  ****************/
 let removeMainButtonElement = document.createElement("button");
-removeMainButtonElement.classname = "remove-main-button";
+removeMainButtonElement.className = "remove-main-button";
 removeMainButtonElement.id = 1;
 removeMainButtonElement.append("Remove Main");
 
 let resetButtonElement = document.createElement("button");
-resetButtonElement.classname = "reset-button";
+resetButtonElement.className = "reset-button";
 resetButtonElement.id = 2;
 resetButtonElement.append("Reset Button");
+
+/*****************
+ *   Stretch 1   *
+ *****************/
+// add a text-type <input> and another button.
+let inputFieldElementOne = document.createElement("input");
+inputFieldElementOne.type = "text";
+inputFieldElementOne.placeholder = "Please input a CSS selector";
+inputFieldElementOne.className = "css-selector-input";
+inputFieldElementOne.id = "css-selector-input";
+
+let removeElementButton = document.createElement("button");
+removeElementButton.className = "remove-element-button";
+removeElementButton.id = 3;
+removeElementButton.append("Remove Element");
+
+//end Stretch 1
+
+/*****************
+ *   Stretch 2   *
+ *****************/
+let inputFieldElementTwo = document.createElement("input");
+inputFieldElementTwo.type = "text";
+inputFieldElementTwo.placeholder = "Please input some text";
+inputFieldElementTwo.className = "user-text-input";
+inputFieldElementTwo.id = 2;
+
+let createElementButton = document.createElement("button");
+createElementButton.className = "create-element-button";
+createElementButton.id = 4;
+createElementButton.append("Create Element");
+
+//end Stretch 2
+
+/****************
+ *    Part 1    *
+ *  continued   *
+ ****************/
 
 let mainSectionElement = document.createElement("main");
 mainSectionElement.className = "main-section";
@@ -58,9 +96,13 @@ anchorElement.href = "https://google.com";
 anchorElement.title = "https://google.com";
 anchorElement.target = "_blank";
 
-let bodySectionElement = document.querySelector("body");
+bodySectionElement = document.querySelector("body");
 bodySectionElement.append(removeMainButtonElement);
 bodySectionElement.append(resetButtonElement);
+bodySectionElement.append(inputFieldElementOne);
+bodySectionElement.append(removeElementButton);
+bodySectionElement.append(inputFieldElementTwo);
+bodySectionElement.append(createElementButton);
 bodySectionElement.append(mainSectionElement);
 mainSectionElement = document.querySelector("main");
 mainSectionElement.append(imgElement);
@@ -77,38 +119,46 @@ removeMainButtonElement.addEventListener("click", function () {
   mainSectionElement.remove();
 });
 
+// perhaps I should have made the reset after the strech goals
+// we can revisit this at that point
 resetButtonElement.addEventListener("click", function () {
   //  On click, reset the page.
-  let mainSectionElement = document.createElement("main");
-  mainSectionElement.className = "main-section";
-  mainSectionElement.id = 1;
-
-  let imgElement = document.createElement("img");
-  imgElement.src =
-    "https://mdn.github.io/learning-area/javascript/apis/document-manipulation/dinosaur.png";
-  let paragraphElement = document.createElement("p");
-  let textBeforeLinkElement = document.createTextNode(
-    "Here we will add a link to "
-  );
-  paragraphElement.appendChild(textBeforeLinkElement);
-
-  let anchorElement = document.createElement("a");
-  let linkText = document.createTextNode("Google");
-  anchorElement.appendChild(linkText);
-  anchorElement.href = "https://google.com";
-  anchorElement.title = "https://google.com";
-  anchorElement.target = "_blank";
-
-  let bodySectionElement = document.querySelector("body");
-  bodySectionElement.append(removeMainButtonElement);
-  bodySectionElement.append(resetButtonElement);
-  bodySectionElement.append(mainSectionElement);
-  mainSectionElement = document.querySelector("main");
-  mainSectionElement.append(imgElement);
-  mainSectionElement.append(paragraphElement);
-  mainSectionElement.append(anchorElement);
+  location.reload();
+  return false;
 });
 
 /*****************
  *   Stretch 1   *
+ *   continued   *
  *****************/
+removeElementButton.addEventListener("click", function () {
+  inputFieldElementOne = document.querySelector(".css-selector-input");
+  console.log(inputFieldElementOne.value);
+  let removeThisElement = inputFieldElementOne.value;
+
+  // There must be a better way, but this works for now
+  if (removeThisElement === "p") {
+    paragraphElement.remove();
+  } else if (removeThisElement === "a") {
+    anchorElement.remove();
+  } else if (removeThisElement === "img") {
+    imgElement.remove();
+  } else if (removeThisElement === "main") {
+    mainSectionElement.remove();
+  } else if (removeThisElement === "body") {
+    bodySectionElement.remove();
+  } else if (removeThisElement === "div") {
+    divSectionElement.remove();
+  }
+});
+
+/*****************
+ *   Stretch 2   *
+ *   continued   *
+ *****************/
+createElementButton.addEventListener("click", function () {
+  inputFieldElementTwo = document.querySelector(".user-text-input");
+  console.log(inputFieldElementTwo.value);
+  let divSectionElement = document.createElement("div");
+  divSectionElement;
+});
