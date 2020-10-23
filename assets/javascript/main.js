@@ -83,8 +83,7 @@ mainSectionElement.className = "main-section";
 mainSectionElement.id = 1;
 
 let imgElement = document.createElement("img");
-imgElement.src =
-  "https://mdn.github.io/learning-area/javascript/apis/document-manipulation/dinosaur.png";
+imgElement.src = "assets/images/goron.png";
 let paragraphElement = document.createElement("p");
 let textBeforeLinkElement = document.createTextNode(
   "Here we will add a link to "
@@ -99,8 +98,8 @@ anchorElement.title = "https://google.com";
 anchorElement.target = "_blank";
 
 bodySectionElement = document.querySelector("body");
-bodySectionElement.append(removeMainButtonElement);
 bodySectionElement.append(resetButtonElement);
+bodySectionElement.append(removeMainButtonElement);
 bodySectionElement.append(inputFieldElementOne);
 bodySectionElement.append(removeElementButton);
 bodySectionElement.append(inputFieldElementTwo);
