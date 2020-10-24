@@ -118,6 +118,7 @@ removeMainButtonElement.addEventListener("click", function () {
   //  On click, remove the <main> element node from the page.
   mainSectionElement = document.querySelector("main");
   mainSectionElement.remove();
+  mySound1.play();
 });
 
 // perhaps I should have made the reset after the strech goals
@@ -140,16 +141,31 @@ removeElementButton.addEventListener("click", function () {
   // There must be a better way, but this works for now
   if (removeThisElement === "p") {
     paragraphElement.remove();
+    inputFieldElementOne.value = "";
+    mySound1.play();
   } else if (removeThisElement === "a") {
     anchorElement.remove();
+    inputFieldElementOne.value = "";
+    mySound1.play();
   } else if (removeThisElement === "img") {
     imgElement.remove();
+    inputFieldElementOne.value = "";
+    mySound1.play();
   } else if (removeThisElement === "main") {
     mainSectionElement.remove();
+    inputFieldElementOne.value = "";
+    mySound1.play();
   } else if (removeThisElement === "body") {
     bodySectionElement.remove();
+    inputFieldElementOne.value = "";
+    mySound1.play();
+    alert("Nice try!");
+    location.reload();
+    return false;
   } else if (removeThisElement === "div") {
     divSectionElement.remove();
+    inputFieldElementOne.value = "";
+    mySound1.play();
   }
 });
 
@@ -164,4 +180,34 @@ createElementButton.addEventListener("click", function () {
   let userTextInput = document.createTextNode(inputFieldElementTwo.value);
   divSectionElement.appendChild(userTextInput);
   bodySectionElement.append(divSectionElement);
+  inputFieldElementTwo.value = "";
+  mySound2.play();
 });
+
+/******************
+ * lets do sound? *
+ ******************/
+
+// sound of element removal
+let mySound1;
+mySound1 = new sound("assets/audio/elementRemoval.wav");
+
+// sound of element creation
+let mySound2;
+mySound2 = new sound("assets/audio/elementCreation.wav");
+
+// sound handling function
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function () {
+    this.sound.play();
+  };
+  this.stop = function () {
+    this.sound.pause();
+  };
+}

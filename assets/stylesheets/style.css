@@ -23,8 +23,12 @@ img {
 }
 
 a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: rgb(56, 75, 23);
 }
+
 .css-selector-input {
   display: flex;
 }
