@@ -67,7 +67,7 @@ inputFieldElementTwo.id = 2;
 let createElementButton = document.createElement("button");
 createElementButton.className = "create-element-button";
 createElementButton.id = 4;
-createElementButton.append("Create Element");
+createElementButton.append("Create Element div");
 
 let divSectionElement = document.createElement("div");
 
@@ -157,15 +157,39 @@ removeElementButton.addEventListener("click", function () {
     mySound1.play();
   } else if (removeThisElement === "body") {
     bodySectionElement.remove();
-    inputFieldElementOne.value = "";
     mySound1.play();
-    alert("Nice try!");
-    location.reload();
-    return false;
+    alert(
+      "Nice Try! ...Restoring the body section element and a reset button."
+    );
+    bodySectionElement = document.createElement("body");
+    htmlSectionElement = document.querySelector("html");
+    htmlSectionElement.append(bodySectionElement);
+    bodySectionElement.append(resetButtonElement);
+  } else if (removeThisElement === "html") {
+    alert("Not gonna happen!  Try again.");
+    inputFieldElementOne.value = "";
+  } else if (removeThisElement === "head") {
+    alert("Not gonna happen!  Try again.");
+    inputFieldElementOne.value = "";
+  } else if (removeThisElement === "meta") {
+    alert("Not gonna happen!  Try again.");
+    inputFieldElementOne.value = "";
+  } else if (removeThisElement === "title") {
+    alert("Not gonna happen!  Try again.");
+    inputFieldElementOne.value = "";
+  } else if (removeThisElement === "link") {
+    alert("Not gonna happen!  Try again.");
+    inputFieldElementOne.value = "";
+  } else if (removeThisElement === "script") {
+    alert("Not gonna happen!  Try again.");
+    inputFieldElementOne.value = "";
   } else if (removeThisElement === "div") {
     divSectionElement.remove();
     inputFieldElementOne.value = "";
     mySound1.play();
+  } else {
+    alert("Please input a valid CSS sector.  Try again.");
+    inputFieldElementOne.value = "";
   }
 });
 
