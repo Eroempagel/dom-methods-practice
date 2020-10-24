@@ -30,12 +30,12 @@
  ****************/
 let removeMainButtonElement = document.createElement("button");
 removeMainButtonElement.className = "remove-main-button";
-removeMainButtonElement.id = 1;
+removeMainButtonElement.id = "button-one";
 removeMainButtonElement.append("Remove Main");
 
 let resetButtonElement = document.createElement("button");
 resetButtonElement.className = "reset-button";
-resetButtonElement.id = 2;
+resetButtonElement.id = "button-two";
 resetButtonElement.append("Reset Button");
 
 /*****************
@@ -46,11 +46,11 @@ let inputFieldElementOne = document.createElement("input");
 inputFieldElementOne.type = "text";
 inputFieldElementOne.placeholder = "Please input a CSS selector";
 inputFieldElementOne.className = "css-selector-input";
-inputFieldElementOne.id = "css-selector-input";
+inputFieldElementOne.id = "input-one";
 
 let removeElementButton = document.createElement("button");
 removeElementButton.className = "remove-element-button";
-removeElementButton.id = 3;
+removeElementButton.id = "button-three";
 removeElementButton.append("Remove Element");
 
 //end Stretch 1
@@ -62,11 +62,11 @@ let inputFieldElementTwo = document.createElement("input");
 inputFieldElementTwo.type = "text";
 inputFieldElementTwo.placeholder = "Please input some text";
 inputFieldElementTwo.className = "user-text-input";
-inputFieldElementTwo.id = 2;
+inputFieldElementTwo.id = "input-two";
 
 let createElementButton = document.createElement("button");
 createElementButton.className = "create-element-button";
-createElementButton.id = 4;
+createElementButton.id = "button-four";
 createElementButton.append("Create Element div");
 
 let divSectionElement = document.createElement("div");
@@ -80,7 +80,7 @@ let divSectionElement = document.createElement("div");
 
 let mainSectionElement = document.createElement("main");
 mainSectionElement.className = "main-section";
-mainSectionElement.id = 1;
+mainSectionElement.id = "main";
 
 let imgElement = document.createElement("img");
 imgElement.className = "image";
