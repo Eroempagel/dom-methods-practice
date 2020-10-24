@@ -167,6 +167,12 @@ removeElementButton.addEventListener("click", function () {
     htmlSectionElement = document.querySelector("html");
     htmlSectionElement.append(bodySectionElement);
     bodySectionElement.append(resetButtonElement);
+    bodySectionElement.style.display = flex;
+    bodySectionElement.style.justifyContent = center;
+    bodySectionElement.style.alignItems = center;
+    resetButtonElement.style.display = flex;
+    resetButtonElement.style.justifyContent = center;
+    resetButtonElement.style.alignSelf = center;
   } else if (removeThisElement === "html") {
     alert("Not gonna happen!  Try again.");
     inputFieldElementOne.value = "";
