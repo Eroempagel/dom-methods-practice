@@ -83,6 +83,8 @@ mainSectionElement.className = "main-section";
 mainSectionElement.id = 1;
 
 let imgElement = document.createElement("img");
+imgElement.className = "image";
+imgElement.id = "image-one";
 imgElement.src = "assets/images/goron.png";
 let paragraphElement = document.createElement("p");
 let textBeforeLinkElement = document.createTextNode(
@@ -91,6 +93,8 @@ let textBeforeLinkElement = document.createTextNode(
 paragraphElement.appendChild(textBeforeLinkElement);
 
 let anchorElement = document.createElement("a");
+anchorElement.className = "link";
+anchorElement.id = "link-one";
 let linkText = document.createTextNode("Google");
 anchorElement.appendChild(linkText);
 anchorElement.href = "https://google.com";
@@ -158,9 +162,7 @@ removeElementButton.addEventListener("click", function () {
   } else if (removeThisElement === "body") {
     bodySectionElement.remove();
     mySound1.play();
-    alert(
-      "Nice Try! ...Restoring the body section element and a reset button."
-    );
+    alert("Nice Try! ...Restoring the body section element and a reset button");
     bodySectionElement = document.createElement("body");
     htmlSectionElement = document.querySelector("html");
     htmlSectionElement.append(bodySectionElement);
